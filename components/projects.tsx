@@ -13,6 +13,24 @@ export default function Projects() {
 
   const projects = [
     {
+      title: "Antim Sewa - अंतिम सेवा",
+      description:
+        "A comprehensive funeral services website providing essential items and services for final rites. Features include user authentication, product catalog, shopping cart system, and bilingual support (Hindi/English).",
+      image: "/antim-sewa.png",
+      tags: ["Next.js 15", "MongoDB", "TypeScript", "Tailwind CSS", "JWT Auth"],
+      github: "https://github.com/AnuragTiwari1508/Antim-Sewa",
+      category: "web",
+    },
+    {
+      title: "AgentSync",
+      description:
+        "AgentSync is a multi-agent AI platform designed to automate and assist with a variety of tasks such as email summarization, calendar planning, video summarization, chat assistance, and social media analytics. This dashboard integrates intelligent agents to enhance productivity and streamline user interactions.",
+      image: "../Agen_sync.png",
+      tags: ["AI", "Next.js", "React", "Dashboard", "Multi-agent"],
+      github: "https://github.com/AnuragTiwari1508/Agent-sync",
+      category: "web",
+    },
+    {
       title: "Stock Saarthi",
       description:
         "A Web3-based platform for tokenizing stocks and real estate assets, enabling fractional ownership through blockchain-powered smart contracts.",

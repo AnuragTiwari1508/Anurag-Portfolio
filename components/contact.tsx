@@ -27,26 +27,45 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setSubmitSuccess(true)
-      setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+    try {
+      // Send data to API route
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       })
 
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        setSubmitSuccess(false)
-      }, 3000)
-    }, 1500)
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitSuccess(true)
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+
+        // Reset success message after 3 seconds
+        setTimeout(() => {
+          setSubmitSuccess(false)
+        }, 3000)
+      } else {
+        console.error('Form submission error:', data.error)
+        alert('Failed to send message. Please try again later.')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      alert('Failed to send message. Please try again later.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -148,6 +167,16 @@ export default function Contact() {
                         rel="noopener noreferrer"
                       >
                         <LinkedinIcon className="h-5 w-5" />
+                      </Link>
+                    </Button>
+                    <Button asChild variant="outline" className="bg-green-500 hover:bg-green-600 text-white border-green-500 hover:border-green-600">
+                      <Link
+                        href="https://wa.me/916261072872"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center px-3 py-2"
+                      >
+                        <span className="font-semibold">WhatsApp</span>
                       </Link>
                     </Button>
                   </div>
