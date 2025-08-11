@@ -7,8 +7,11 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [],
   },
+  swcMinify: true,
+  poweredByHeader: false,
 }
 
 export default nextConfig
