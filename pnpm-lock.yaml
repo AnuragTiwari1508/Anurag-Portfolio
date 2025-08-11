@@ -123,7 +123,7 @@ importers:
         specifier: ^0.454.0
         version: 0.454.0(react@19.1.0)
       mongodb:
-        specifier: ^6.18.0
+        specifier: ^6.5.0
         version: 6.18.0
       next:
         specifier: 15.2.4
