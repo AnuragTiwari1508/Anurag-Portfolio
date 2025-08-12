@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTrigger, DialogClose, DialogTitle } from "@/components/ui/dialog"
+import { VisuallyHidden } from "@/components/ui/visually-hidden"
 import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -107,13 +108,17 @@ export default function Gallery() {
           {images.map((image, index) => (
             <Dialog
               key={index}
+              open={selectedImage === index}
               onOpenChange={(open) => {
-                if (open) setSelectedImage(index)
-                else setSelectedImage(null)
+                if (!open) setSelectedImage(null)
               }}
             >
               <DialogTrigger asChild>
-                <motion.div variants={item} className="cursor-pointer">
+                <motion.div 
+                  variants={item} 
+                  className="cursor-pointer"
+                  onClick={() => setSelectedImage(index)}
+                >
                   <Card className="overflow-hidden hover:shadow-lg transition-shadow">
                     <div className="h-48 overflow-hidden">
                       <img
@@ -129,20 +134,26 @@ export default function Gallery() {
                 </motion.div>
               </DialogTrigger>
               <DialogContent className="max-w-4xl p-0 bg-transparent border-none">
-                <div className="relative">
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white z-10"
-                    onClick={() => setSelectedImage(null)}
-                  >
-                    <XIcon className="h-5 w-5" />
-                  </Button>
-                  <div className="flex items-center justify-center">
+                <DialogTitle>
+                  <VisuallyHidden>
+                    {selectedImage !== null ? `Image: ${images[selectedImage].alt}` : "Gallery Image"}
+                  </VisuallyHidden>
+                </DialogTitle>
+                <div className="relative flex flex-col items-center justify-center">
+                  <DialogClose asChild>
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
+                      className="absolute top-2 right-2 bg-black/50 hover:bg-black/70 text-white z-10 backdrop-blur"
+                    >
+                      <XIcon className="h-5 w-5" />
+                    </Button>
+                  </DialogClose>
+                  <div className="relative flex items-center justify-center w-full">
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10 backdrop-blur"
                       onClick={(e) => {
                         e.stopPropagation()
                         prevImage()
@@ -150,15 +161,18 @@ export default function Gallery() {
                     >
                       <ChevronLeftIcon className="h-6 w-6" />
                     </Button>
-                    <img
-                      src={selectedImage !== null ? images[selectedImage].src : ""}
-                      alt={selectedImage !== null ? images[selectedImage].alt : ""}
-                      className="max-h-[80vh] max-w-full object-contain"
-                    />
+                    <div className="rounded-2xl shadow-2xl bg-white/10 dark:bg-gray-900/40 backdrop-blur-lg border border-white/20 p-2 transition-transform duration-300 hover:scale-105" style={{boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)'}}>
+                      <img
+                        src={selectedImage !== null ? images[selectedImage].src : "/placeholder.svg"}
+                        alt={selectedImage !== null ? images[selectedImage].alt : "Gallery Image"}
+                        className="max-h-[70vh] max-w-[80vw] object-contain rounded-xl shadow-lg"
+                        style={{filter: 'drop-shadow(0 4px 24px rgba(0,0,0,0.25))'}}
+                      />
+                    </div>
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10"
+                      className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white z-10 backdrop-blur"
                       onClick={(e) => {
                         e.stopPropagation()
                         nextImage()
@@ -167,8 +181,8 @@ export default function Gallery() {
                       <ChevronRightIcon className="h-6 w-6" />
                     </Button>
                   </div>
-                  <div className="bg-white dark:bg-gray-900 p-4 text-center">
-                    <p className="text-gray-900 dark:text-white">
+                  <div className="mt-4 px-4 py-2 rounded-xl bg-white/70 dark:bg-gray-900/80 shadow text-center backdrop-blur-md border border-white/20">
+                    <p className="text-gray-900 dark:text-white font-semibold">
                       {selectedImage !== null ? images[selectedImage].caption : ""}
                     </p>
                   </div>
