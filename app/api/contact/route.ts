@@ -6,6 +6,8 @@ export async function POST(request: Request) {
     const body = await request.json();
     const { name, email, subject, message } = body;
 
+    console.log('Contact form submission:', { name, email, subject });
+
     // Validate the request body
     if (!name || !email || !subject || !message) {
       return NextResponse.json(
@@ -17,6 +19,8 @@ export async function POST(request: Request) {
     // Connect to MongoDB
     const client = await clientPromise;
     const db = client.db();
+    
+    console.log('MongoDB connected successfully');
 
     // Insert the contact form data into the database
     const result = await db.collection('contacts').insertOne({
@@ -33,8 +37,18 @@ export async function POST(request: Request) {
     );
   } catch (error) {
     console.error('Error in contact form submission:', error);
+    
+    // More detailed error message for debugging
+    const errorMessage = error instanceof Error 
+      ? `${error.name}: ${error.message}` 
+      : 'Unknown error occurred';
+    
     return NextResponse.json(
-      { error: 'Failed to send message. Please try again later.' },
+      { 
+        error: 'Failed to send message. Please try again later.',
+        details: errorMessage,
+        time: new Date().toISOString()
+      },
       { status: 500 }
     );
   }

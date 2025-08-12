@@ -21,6 +21,7 @@ export default function Contact() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
+  const [errorMessage, setErrorMessage] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -57,12 +58,16 @@ export default function Contact() {
           setSubmitSuccess(false)
         }, 3000)
       } else {
-        console.error('Form submission error:', data.error)
-        alert('Failed to send message. Please try again later.')
+        console.error('Form submission error:', data)
+        setErrorMessage(data.error || 'Failed to send message. Please try again later.')
+        // Reset error message after 5 seconds
+        setTimeout(() => {
+          setErrorMessage("")
+        }, 5000)
       }
     } catch (error) {
       console.error('Form submission error:', error)
-      alert('Failed to send message. Please try again later.')
+      setErrorMessage('Network error. Please check your connection and try again.')
     } finally {
       setIsSubmitting(false)
     }
@@ -243,6 +248,9 @@ export default function Contact() {
                   </Button>
                   {submitSuccess && (
                     <p className="text-green-600 dark:text-green-400 text-center mt-2">Message sent successfully!</p>
+                  )}
+                  {errorMessage && (
+                    <p className="text-red-600 dark:text-red-400 text-center mt-2">{errorMessage}</p>
                   )}
                 </form>
               </CardContent>
