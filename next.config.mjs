@@ -10,7 +10,6 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [],
   },
-  swcMinify: true,
   poweredByHeader: false,
 }
 

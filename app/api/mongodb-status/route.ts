@@ -3,6 +3,20 @@ import clientPromise from '@/lib/db';
 
 export async function GET() {
   try {
+    // Check if MongoDB URI is available
+    if (!process.env.MONGODB_URI) {
+      return NextResponse.json(
+        { 
+          isConnected: false, 
+          error: 'MongoDB URI not configured', 
+          message: 'MongoDB connection string is not available in environment variables.',
+          question: 'क्या आप MongoDB से कनेक्ट हो गए हैं?',
+          response: 'नहीं, MongoDB का कनेक्शन URL उपलब्ध नहीं है।'
+        },
+        { status: 200 }
+      );
+    }
+
     // Connect to MongoDB
     const client = await clientPromise;
     const db = client.db();

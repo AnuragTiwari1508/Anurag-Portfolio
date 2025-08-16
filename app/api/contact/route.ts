@@ -16,6 +16,16 @@ export async function POST(request: Request) {
       );
     }
 
+    // Check if MongoDB URI is available
+    if (!process.env.MONGODB_URI) {
+      console.warn('MongoDB URI not configured, contact form submission logged only');
+      console.log('Contact form data:', { name, email, subject, message });
+      return NextResponse.json(
+        { message: 'Contact form submitted successfully (logged)' },
+        { status: 200 }
+      );
+    }
+
     // Connect to MongoDB
     const client = await clientPromise;
     const db = client.db();
