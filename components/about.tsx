@@ -24,7 +24,7 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 dark:bg-gray-900">
+    <section id="about" className="py-20 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 dark:bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
