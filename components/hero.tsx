@@ -32,36 +32,36 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
               Hi, I&apos;m <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 animate-pulse">Anurag Tiwari</span>
             </h1>
-            <h2 className="text-lg md:text-xl lg:text-2xl text-slate-700 dark:text-gray-300 mb-8 font-medium min-h-[2.5rem] flex items-center">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-700 dark:from-blue-400 dark:to-purple-500 font-semibold">
+            <h2 className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 mb-8 font-medium min-h-[2.5rem] flex items-center">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-semibold">
                 {typedText}
               </span>
               <span className="animate-pulse text-purple-600 dark:text-purple-400 ml-1">|</span>
             </h2>
-            <p className="text-lg text-slate-800 dark:text-gray-400 mb-10 max-w-lg leading-relaxed">
-              A passionate <span className="text-purple-700 dark:text-purple-400 font-semibold">tech enthusiast</span> and <span className="text-blue-700 dark:text-blue-400 font-semibold">Open Source Contributor</span> from Indore, India, with expertise in web development, electronics, and a
+            <p className="text-lg text-gray-700 dark:text-gray-400 mb-10 max-w-lg leading-relaxed">
+              A passionate <span className="text-purple-600 dark:text-purple-400 font-semibold">tech enthusiast</span> and <span className="text-blue-600 dark:text-blue-400 font-semibold">Open Source Contributor</span> from Indore, India, with expertise in web development, electronics, and a
               track record of winning hackathons and leading technical teams.
             </p>
             <div className="flex flex-wrap gap-4 mb-8">
-              <Button asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-purple-500/40 transform hover:scale-105 transition-all duration-300">
+              <Button asChild className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 text-lg font-semibold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
                 <Link href="#contact">Get In Touch</Link>
               </Button>
-              <Button asChild variant="outline" className="border-2 border-purple-700 text-purple-700 hover:bg-purple-700 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-400 dark:hover:text-white px-8 py-3 text-lg font-semibold transform hover:scale-105 transition-all duration-300 bg-white/90 dark:bg-transparent backdrop-blur-sm shadow-md hover:shadow-purple-500/30">
+              <Button asChild variant="outline" className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white dark:border-purple-400 dark:text-purple-400 dark:hover:bg-purple-400 dark:hover:text-white px-8 py-3 text-lg font-semibold transform hover:scale-105 transition-all duration-300">
                 <Link href="#projects">View Projects</Link>
               </Button>
             </div>
             <div className="flex mt-6 space-x-6">
-              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100/80 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full bg-white/50 dark:bg-transparent backdrop-blur-sm border border-purple-200/50 dark:border-transparent" aria-label="GitHub">
+              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full" aria-label="GitHub">
                 <Link href="https://github.com/AnuragTiwari1508" target="_blank" rel="noopener noreferrer">
-                  <GithubIcon className="h-6 w-6 text-slate-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400" />
+                  <GithubIcon className="h-6 w-6 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400" />
                 </Link>
               </Button>
-              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100/80 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full bg-white/50 dark:bg-transparent backdrop-blur-sm border border-purple-200/50 dark:border-transparent" aria-label="Resume">
+              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full" aria-label="Resume">
                 <Link href="https://drive.google.com/file/d/1d1m9G3ANaOS1YZNtq9lbs91hCy20Ad2g/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-slate-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                     <path d="M14 2v6h6"></path>
                     <path d="M16 13H8"></path>
@@ -70,18 +70,18 @@ export default function Hero() {
                   </svg>
                 </Link>
               </Button>
-              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100/80 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full bg-white/50 dark:bg-transparent backdrop-blur-sm border border-purple-200/50 dark:border-transparent" aria-label="LinkedIn">
+              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full" aria-label="LinkedIn">
                 <Link
                   href="https://www.linkedin.com/in/anurag-tiwari-4b664627b/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <LinkedinIcon className="h-6 w-6 text-slate-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400" />
+                  <LinkedinIcon className="h-6 w-6 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400" />
                 </Link>
               </Button>
-              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100/80 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full bg-white/50 dark:bg-transparent backdrop-blur-sm border border-purple-200/50 dark:border-transparent" aria-label="Email">
+              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full" aria-label="Email">
                 <Link href="mailto:tiwarianurag342409@gmail.com">
-                  <MailIcon className="h-6 w-6 text-slate-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400" />
+                  <MailIcon className="h-6 w-6 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400" />
                 </Link>
               </Button>
             </div>

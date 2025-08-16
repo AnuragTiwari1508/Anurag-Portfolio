@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background: 248 250 252;
-    --foreground: 15 23 42;
-    --card: 255 255 255;
-    --card-foreground: 15 23 42;
-    --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
-    --primary: 147 51 234;
-    --primary-foreground: 248 250 252;
-    --secondary: 241 245 249;
-    --secondary-foreground: 15 23 42;
-    --muted: 241 245 249;
-    --muted-foreground: 100 116 139;
-    --accent: 236 254 255;
-    --accent-foreground: 15 23 42;
-    --destructive: 239 68 68;
-    --destructive-foreground: 248 250 252;
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 147 51 234;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 262.1 83.3% 57.8%;
     --radius: 0.5rem;
   }
 
@@ -61,18 +61,17 @@
     transition: background-color 0.3s ease;
   }
   
-  /* Dark theme background */
+  /* Dark theme background - RESTORED ORIGINAL */
   body.dark {
     background: #0a0a16;
   }
   
-  /* Light theme background */
+  /* Light theme background - IMPROVED */
   body:not(.dark) {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #f1f5f9 100%);
-    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
   }
   
-  /* Dark theme animated background */
+  /* Dark theme animated background - RESTORED ORIGINAL */
   body.dark::before {
     content: '';
     position: fixed;
@@ -92,7 +91,7 @@
     animation: stars 12s linear infinite;
   }
   
-  /* Enhanced Light theme animated background */
+  /* Light theme animated background - SIMPLIFIED */
   body:not(.dark)::before {
     content: '';
     position: fixed;
@@ -102,30 +101,10 @@
     height: 100%;
     z-index: -1;
     background: 
-      radial-gradient(circle at 20% 50%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-      radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.12) 0%, transparent 50%),
-      radial-gradient(circle at 60% 30%, rgba(99, 102, 241, 0.12) 0%, transparent 50%);
-    animation: lightWave 20s ease-in-out infinite;
-  }
-  
-  /* Enhanced floating dots for light theme */
-  body:not(.dark)::after {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background: 
-      radial-gradient(rgba(147, 51, 234, 0.4), rgba(147, 51, 234, 0.15) 2px, transparent 40px),
-      radial-gradient(rgba(59, 130, 246, 0.4), rgba(59, 130, 246, 0.15) 1px, transparent 30px),
-      radial-gradient(rgba(236, 72, 153, 0.3), rgba(236, 72, 153, 0.12) 2px, transparent 50px),
-      radial-gradient(rgba(99, 102, 241, 0.3), rgba(99, 102, 241, 0.12) 1px, transparent 35px);
-    background-size: 400px 400px, 300px 300px, 500px 500px, 250px 250px;
-    background-position: 0 0, 150px 100px, 250px 50px, 350px 200px;
-    animation: floatingDots 25s linear infinite;
+      radial-gradient(circle at 20% 50%, rgba(147, 51, 234, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(236, 72, 153, 0.04) 0%, transparent 50%);
+    animation: lightWave 15s ease-in-out infinite;
   }
   
   html {
@@ -133,6 +112,7 @@
   }
 }
 
+/* ORIGINAL ANIMATIONS - RESTORED */
 @keyframes stars {
   0% {
     background-position: 0 0, 40px 60px, 130px 270px, 200px 100px, 300px 200px;
@@ -142,54 +122,12 @@
   }
 }
 
-@keyframes lightStars {
-  0% {
-    background-position: 0 0, 100px 100px, 200px 50px, 300px 200px;
-  }
-  100% {
-    background-position: -450px -450px, -250px -250px, -300px -550px, -300px -500px;
-  }
-}
-
 @keyframes lightWave {
   0%, 100% {
-    background-position: 20% 50%, 80% 20%, 40% 80%, 60% 30%;
-    filter: hue-rotate(0deg);
-  }
-  25% {
-    background-position: 30% 60%, 70% 30%, 50% 70%, 70% 40%;
-    filter: hue-rotate(90deg);
+    background-position: 20% 50%, 80% 20%, 40% 80%;
   }
   50% {
-    background-position: 40% 70%, 60% 40%, 60% 60%, 80% 50%;
-    filter: hue-rotate(180deg);
-  }
-  75% {
-    background-position: 10% 40%, 90% 10%, 30% 90%, 50% 20%;
-    filter: hue-rotate(270deg);
-  }
-}
-
-@keyframes floatingDots {
-  0% {
-    background-position: 0 0, 150px 100px, 250px 50px, 350px 200px;
-    opacity: 0.8;
-  }
-  25% {
-    background-position: -100px -100px, 100px 150px, 300px 100px, 300px 250px;
-    opacity: 1;
-  }
-  50% {
-    background-position: -200px -200px, 50px 200px, 350px 150px, 250px 300px;
-    opacity: 0.9;
-  }
-  75% {
-    background-position: -300px -300px, 0px 250px, 400px 200px, 200px 350px;
-    opacity: 0.7;
-  }
-  100% {
-    background-position: -400px -400px, -50px 300px, 450px 250px, 150px 400px;
-    opacity: 0.8;
+    background-position: 40% 70%, 60% 40%, 60% 60%;
   }
 }
 
