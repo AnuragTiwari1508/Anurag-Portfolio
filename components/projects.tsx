@@ -27,7 +27,7 @@ export default function Projects() {
       title: "Spark Ignited Website",
       description:
         "Official website for Team Spark Ignited at IET DAVV, showcasing team projects, events, and achievements.",
-      image: "../TSI_SS.png",
+      image: "/TSI_SS.png",
       tags: ["Web Development", "Next.js", "UI/UX"],
       link: "https://spark-eta-eight.vercel.app/",
       category: "web",
@@ -36,7 +36,7 @@ export default function Projects() {
       title: "DUAA DAVV Website",
       description:
         "Official website for DUAA (DAVV University Alumni Association) managing alumni relations and networking events.",
-      image: "../DUAA_SS.png",
+      image: "/DUAA_SS.png",
       tags: ["Web Development", "Content Strategy", "SEO"],
       link: "https://duaa.dauniv.ac.in/",
       category: "web",
@@ -55,7 +55,7 @@ export default function Projects() {
       title: "AgentSync",
       description:
         "AgentSync is a multi-agent AI platform designed to automate and assist with a variety of tasks such as email summarization, calendar planning, video summarization, chat assistance, and social media analytics. This dashboard integrates intelligent agents to enhance productivity and streamline user interactions.",
-      image: "../Agen_sync.png",
+      image: "/Agen_sync.png",
       tags: ["AI", "Next.js", "React", "Dashboard", "Multi-agent"],
       github: "https://github.com/AnuragTiwari1508/Agent-sync",
       category: "web",
@@ -64,7 +64,7 @@ export default function Projects() {
       title: "Stock Saarthi",
       description:
         "A Web3-based platform for tokenizing stocks and real estate assets, enabling fractional ownership through blockchain-powered smart contracts.",
-      image: "../stocksaarthi_ss.png",
+      image: "/stocksaarthi_ss.png",
       tags: ["Web3", "Blockchain", "Smart Contracts", "Hackathon"],
       github: "https://github.com/AnuragTiwari1508/Stock-Saarthi",
       category: "hackathon",
@@ -73,7 +73,7 @@ export default function Projects() {
     {
       title: "Geolocation Attendance System",
       description: "Flutter-based application with API integration for tracking attendance using geolocation services.",
-      image: "../geoattendance.png",
+      image: "/geoattendance.png",
       tags: ["Flutter", "API", "Geolocation", "Mobile App"],
       category: "app",
       github: "https://github.com/AnuragTiwari1508",
@@ -82,7 +82,7 @@ export default function Projects() {
       title: "RSSI Signal Detection",
       description:
         "Research project using ESP32 for activity classification and localization through WiFi RSSI signal variations, with ML model for motion detection.",
-      image: "../RSSI.png",
+      image: "/RSSI.png",
       tags: ["ESP32", "ML", "Arduino", "Python", "Signal Processing"],
       category: "research",
     },
@@ -114,7 +114,7 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
+    <section id="projects" className="py-20 bg-gradient-to-br from-white via-slate-50 to-purple-50/40 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -123,12 +123,13 @@ export default function Projects() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            My <span className="text-purple-600">Projects</span>
+          <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-2">
+            My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-500">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            A collection of projects, hackathon submissions, and research work that showcase my skills and interests.
+          <div className="w-20 h-1 bg-gradient-to-r from-purple-600 to-pink-500 mx-auto mb-6"></div>
+          <p className="text-slate-700 dark:text-gray-400 max-w-2xl mx-auto">
+            A collection of projects showcasing my skills in web development, mobile apps, blockchain, electronics, and
+            AI/ML.
           </p>
         </motion.div>
 
@@ -153,33 +154,34 @@ export default function Projects() {
         >
           {filteredProjects.map((project, index) => (
             <motion.div key={index} variants={item}>
-              <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="h-48 overflow-hidden">
+              <Card className="h-full overflow-hidden hover:shadow-2xl transition-all duration-500 bg-white/95 dark:bg-card backdrop-blur-lg hover:transform hover:scale-[1.03] group border border-purple-100/50 dark:border-transparent">
+                <div className="h-48 overflow-hidden relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-purple-900/20 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform hover:scale-105"
+                    className="w-full h-full object-cover transition-transform group-hover:scale-110 duration-500"
                   />
                 </div>
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">{project.title}</h3>
+                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors duration-300">{project.title}</h3>
                     {project.achievement && (
-                      <div className="flex items-center text-yellow-500 text-sm">
+                      <div className="flex items-center text-yellow-600 dark:text-yellow-500 text-sm animate-pulse">
                         <AwardIcon className="h-4 w-4 mr-1" />
-                        <span>Award</span>
+                        <span className="font-medium">Award</span>
                       </div>
                     )}
                   </div>
-                  <p className="text-gray-600 dark:text-gray-400 mb-4">{project.description}</p>
+                  <p className="text-slate-700 dark:text-gray-400 mb-4 group-hover:text-slate-800 dark:group-hover:text-gray-300 transition-colors duration-300">{project.description}</p>
                   {project.achievement && (
-                    <p className="text-sm text-purple-600 dark:text-purple-400 mb-4 italic">{project.achievement}</p>
+                    <p className="text-sm text-purple-700 dark:text-purple-400 mb-4 italic font-medium bg-purple-50 dark:bg-purple-900/20 p-2 rounded-md">{project.achievement}</p>
                   )}
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="text-xs bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-2 py-1 rounded-full"
+                        className="text-xs bg-gradient-to-r from-purple-100 to-pink-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200 px-3 py-1 rounded-full font-medium hover:from-purple-200 hover:to-pink-200 dark:hover:bg-purple-800 transition-colors duration-200"
                       >
                         {tag}
                       </span>
@@ -188,7 +190,7 @@ export default function Projects() {
                 </CardContent>
                 <CardFooter className="p-4 pt-0 flex gap-2">
                   {project.github && (
-                    <Button asChild variant="outline" size="sm">
+                    <Button asChild variant="outline" size="sm" className="hover:bg-purple-50 dark:hover:bg-purple-900/20 border-purple-200 dark:border-purple-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300">
                       <Link href={project.github} target="_blank" rel="noopener noreferrer">
                         <GithubIcon className="h-4 w-4 mr-1" />
                         GitHub
@@ -196,7 +198,7 @@ export default function Projects() {
                     </Button>
                   )}
                   {project.link && (
-                    <Button asChild variant="outline" size="sm">
+                    <Button asChild variant="outline" size="sm" className="hover:bg-purple-50 dark:hover:bg-purple-900/20 border-purple-200 dark:border-purple-700 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300">
                       <Link href={project.link} target="_blank" rel="noopener noreferrer">
                         <ExternalLinkIcon className="h-4 w-4 mr-1" />
                         Live Demo
