@@ -46,7 +46,7 @@ export default function Projects() {
       title: "DhanSetu Gateway",
       description:
         "A comprehensive crypto payment system with Next.js 15 and multi-blockchain support. Enables secure crypto payments, subscriptions, and invoicing across 6 blockchains including Ethereum, Polygon, BSC, Arbitrum, Optimism, and Solana.",
-      image: "/placeholder.png",
+      image: "/Dhansetu.png",
       tags: ["Next.js 15", "TypeScript", "Multi-Chain", "Crypto", "Web3", "Hackathon"],
       github: "https://github.com/AnuragTiwari1508/dhan-setu",
       category: "hackathon",
