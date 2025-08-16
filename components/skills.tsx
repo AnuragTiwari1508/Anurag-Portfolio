@@ -16,7 +16,7 @@ export default function Skills() {
     {
       title: "Web Development",
       icon: <CodeIcon className="h-6 w-6 text-purple-600" />,
-      skills: ["HTML/CSS", "JavaScript", "React", "Next.js", "API Development"],
+      skills: ["HTML/CSS", "JavaScript", "React", "Next.js", "Express.js", "Google OAuth", "API Development"],
     },
     {
       title: "Mobile Development",
@@ -29,9 +29,9 @@ export default function Skills() {
       skills: ["Embedded C", "PCB Designing", "Arduino", "ESP32", "SimulIDE"],
     },
     {
-      title: "Programming",
+      title: "Programming & Web3",
       icon: <ServerIcon className="h-6 w-6 text-purple-600" />,
-      skills: ["Python", "C/C++", "VS Code", "Atmel Studio-7"],
+      skills: ["Python", "C/C++", "Ethereum", "Polygon", "Smart Contracts", "VS Code", "Atmel Studio-7"],
     },
     {
       title: "AI & ML",

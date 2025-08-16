@@ -12,6 +12,7 @@ export default function Projects() {
   const [activeTab, setActiveTab] = useState("all")
 
   const projects = [
+    // Projects with live demos first
     {
       title: "Antim Sewa - अंतिम सेवा",
       description:
@@ -19,7 +20,36 @@ export default function Projects() {
       image: "/antim-sewa.png",
       tags: ["Next.js 15", "MongoDB", "TypeScript", "Tailwind CSS", "JWT Auth"],
       github: "https://github.com/AnuragTiwari1508/Antim-Sewa",
+      link: "https://antim-sewa-gamma.vercel.app/",
       category: "web",
+    },
+    {
+      title: "Spark Ignited Website",
+      description:
+        "Official website for Team Spark Ignited at IET DAVV, showcasing team projects, events, and achievements.",
+      image: "../TSI_SS.png",
+      tags: ["Web Development", "Next.js", "UI/UX"],
+      link: "https://spark-eta-eight.vercel.app/",
+      category: "web",
+    },
+    {
+      title: "DUAA DAVV Website",
+      description:
+        "Official website for DUAA (DAVV University Alumni Association) managing alumni relations and networking events.",
+      image: "../DUAA_SS.png",
+      tags: ["Web Development", "Content Strategy", "SEO"],
+      link: "https://duaa.dauniv.ac.in/",
+      category: "web",
+    },
+    // Projects with GitHub repos only
+    {
+      title: "DhanSetu Gateway",
+      description:
+        "A comprehensive crypto payment system with Next.js 15 and multi-blockchain support. Enables secure crypto payments, subscriptions, and invoicing across 6 blockchains including Ethereum, Polygon, BSC, Arbitrum, Optimism, and Solana.",
+      image: "/dhansetu.png",
+      tags: ["Next.js 15", "TypeScript", "Multi-Chain", "Crypto", "Web3", "Hackathon"],
+      github: "https://github.com/AnuragTiwari1508/dhan-setu",
+      category: "hackathon",
     },
     {
       title: "AgentSync",
@@ -41,6 +71,14 @@ export default function Projects() {
       achievement: "Winner, I Love Hackathon",
     },
     {
+      title: "Geolocation Attendance System",
+      description: "Flutter-based application with API integration for tracking attendance using geolocation services.",
+      image: "../geoattendance.png",
+      tags: ["Flutter", "API", "Geolocation", "Mobile App"],
+      category: "app",
+      github: "https://github.com/AnuragTiwari1508",
+    },
+    {
       title: "RSSI Signal Detection",
       description:
         "Research project using ESP32 for activity classification and localization through WiFi RSSI signal variations, with ML model for motion detection.",
@@ -55,32 +93,6 @@ export default function Projects() {
       tags: ["Electronics", "Embedded Systems", "Automotive"],
       category: "electronics",
       achievement: "Winner, Volvo Eicher Soil Symposium 2024",
-    },
-    {
-      title: "Geolocation Attendance System",
-      description: "Flutter-based application with API integration for tracking attendance using geolocation services.",
-      image: "../geoattendance.png",
-      tags: ["Flutter", "API", "Geolocation", "Mobile App"],
-      category: "app",
-      github: "https://github.com/AnuragTiwari1508",
-    },
-    {
-      title: "Spark Ignited Website",
-      description:
-        "Official website for Team Spark Ignited at IET DAVV, showcasing team projects, events, and achievements.",
-      image: "../TSI_SS.png",
-      tags: ["Web Development", "Next.js", "UI/UX"],
-      link: "https://spark-eta-eight.vercel.app/",
-      category: "web",
-    },
-    {
-      title: "DUAA DAVV Website",
-      description:
-        "Official website for DUAA (DAVV University Alumni Association) managing alumni relations and networking events.",
-      image: "../DUAA_SS.png",
-      tags: ["Web Development", "Content Strategy", "SEO"],
-      link: "https://duaa.dauniv.ac.in/",
-      category: "web",
     },
   ]
 
