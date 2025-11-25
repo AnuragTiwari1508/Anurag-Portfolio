@@ -138,7 +138,7 @@ export default function Projects() {
         damping: 12,
         duration: 0.8
       }
-    },
+    }
   }
 
   return (
