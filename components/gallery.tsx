@@ -23,7 +23,7 @@ export default function Gallery() {
       caption: "DevCraft Hackathon Award Ceremony - Team Imaginary Coders",
     },
     {
-      src: "/2025 winning photos/SS_prototype.png",
+      src: "/2025 winning photos/Winningprize.png",
       alt: "Xplora Project Screenshot",
       caption: "Xplora - Adventure Reward Gaming Platform (DevCraft Winning Project)",
     },
