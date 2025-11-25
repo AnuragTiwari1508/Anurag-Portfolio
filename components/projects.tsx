@@ -10,6 +10,7 @@ import Link from "next/link"
 
 export default function Projects() {
   const [activeTab, setActiveTab] = useState("all")
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
 
   const projects = [
     // Projects with live demos first
