@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowDownIcon, GithubIcon, LinkedinIcon, MailIcon, SparklesIcon } from "lucide-react"
 import Link from "next/link"
 
-export default function Hero() {
+export default function HeroEnhanced() {
   const [typedText, setTypedText] = useState("")
   const [currentRole, setCurrentRole] = useState(0)
   const roles = [
@@ -105,7 +105,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
             >
-              Hi, I&apos;m{" "}
+              Hi, I'm{" "}
               <motion.span 
                 className="text-shimmer neon-glow inline-block"
                 animate={{ 
@@ -136,7 +136,7 @@ export default function Hero() {
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 1, repeat: Infinity }}
               >
-                ||
+                |
               </motion.span>
             </motion.div>
             
@@ -164,6 +164,7 @@ export default function Hero() {
               </motion.span>
               {" "}from Indore, India, specializing in full-stack development, electronics, and leading technical teams to victory.
             </motion.p>
+
             <motion.div 
               className="flex flex-wrap gap-6 mb-12"
               initial={{ opacity: 0, y: 20 }}
@@ -224,41 +225,152 @@ export default function Hero() {
                         </svg>
                       )}
                     </Link>
-              </Button>
-              <Button asChild variant="ghost" size="icon" className="hover:bg-purple-100 dark:hover:bg-purple-900 transform hover:scale-110 transition-all duration-300 rounded-full" aria-label="Email">
-                <Link href="mailto:tiwarianurag342409@gmail.com">
-                  <MailIcon className="h-6 w-6 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400" />
-                </Link>
-              </Button>
-            </div>
+                  </Button>
+                </motion.div>
+              ))}
+            </motion.div>
           </motion.div>
+          
           <motion.div
             className="md:w-1/2 flex justify-center"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            initial={{ opacity: 0, x: 100, rotateY: 45 }}
+            animate={{ opacity: 1, x: 0, rotateY: 0 }}
+            transition={{ 
+              duration: 1.5, 
+              type: "spring", 
+              stiffness: 80,
+              damping: 20,
+              delay: 0.3
+            }}
           >
-            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-transparent bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 p-1 shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 float-animation">
-              <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-gray-900">
-                <img
-                  src="/Anurag Tiwari ss.jpg"
-                  alt="Anurag Tiwari"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
+            <div className="relative card-3d">
+              <motion.div
+                className="card-3d-inner relative"
+                animate={{
+                  rotateY: [0, 5, -5, 0],
+                  rotateX: [0, 2, -2, 0]
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                <div className="w-80 h-80 md:w-96 md:h-96 relative">
+                  {/* Animated rings around profile */}
+                  <motion.div 
+                    className="absolute inset-0 rounded-full border-4 border-purple-500/30"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  />
+                  <motion.div 
+                    className="absolute inset-4 rounded-full border-2 border-pink-500/20"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  />
+                  
+                  {/* Main profile container */}
+                  <motion.div 
+                    className="w-full h-full rounded-full bg-gradient-to-br from-purple-600 via-pink-500 to-blue-500 p-1.5 shadow-2xl"
+                    whileHover={{ 
+                      scale: 1.05,
+                      rotateY: 15,
+                      rotateX: 10
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <div className="w-full h-full rounded-full bg-white dark:bg-gray-900 p-2 overflow-hidden">
+                      <motion.img
+                        src="/my photo(1111).png"
+                        alt="Anurag Tiwari"
+                        className="w-full h-full object-cover rounded-full"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.6 }}
+                      />
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+              
+              {/* Floating achievement badges */}
+              <motion.div 
+                className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex flex-col items-center justify-center shadow-xl"
+                animate={{
+                  y: [0, -10, 0],
+                  rotate: [0, 10, -10, 0]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+                whileHover={{ scale: 1.2 }}
+              >
+                <span className="text-2xl">🏆</span>
+                <span className="text-xs font-bold text-white">2X</span>
+              </motion.div>
+              
+              <motion.div 
+                className="absolute -bottom-4 -left-4 w-20 h-20 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center shadow-xl"
+                animate={{
+                  y: [0, 10, 0],
+                  x: [0, 5, -5, 0]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+                whileHover={{ scale: 1.15 }}
+              >
+                <span className="text-xl">🚀</span>
+              </motion.div>
+              
+              <motion.div 
+                className="absolute top-8 -left-8 w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center shadow-lg"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360]
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5
+                }}
+                whileHover={{ scale: 1.3 }}
+              >
+                <span className="text-lg">💡</span>
+              </motion.div>
             </div>
-          </motion.div>
-        </div>
-        <div className="flex justify-center mt-16">
-          <motion.div animate={{ y: [0, 10, 0] }} transition={{ repeat: Number.POSITIVE_INFINITY, duration: 1.5 }}>
-            <Link href="#about">
-              <Button variant="ghost" size="icon" aria-label="Scroll down">
-                <ArrowDownIcon className="h-6 w-6" />
-              </Button>
-            </Link>
           </motion.div>
         </div>
       </div>
+      
+      {/* Scroll indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+      >
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <Button asChild variant="ghost" size="icon" className="dynamic-card rounded-full" aria-label="Scroll down">
+            <Link href="#about">
+              <motion.div
+                whileHover={{ scale: 1.2 }}
+                transition={{ type: "spring", stiffness: 400 }}
+              >
+                <ArrowDownIcon className="h-6 w-6 text-gray-600 dark:text-gray-300" />
+              </motion.div>
+            </Link>
+          </Button>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }
