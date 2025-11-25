@@ -43,6 +43,17 @@ export default function Projects() {
     },
     // Projects with GitHub repos only
     {
+      title: "Xplora - Adventure Reward Gaming Platform",
+      description:
+        "An adventure-based reward gaming platform with location-based challenges, daily rewards, and gamification elements. Built with modern web technologies and responsive design.",
+      image: "/SS_prototype.png",
+      tags: ["React", "JavaScript", "Gaming", "Rewards", "Adventure", "Hackathon"],
+      github: "https://github.com/AnuragTiwari1508/Xplora",
+      link: "https://xploraaaaaaaa.vercel.app",
+      category: "hackathon",
+      achievement: "1st Position, DevCraft Hackathon (IIT Indore)",
+    },
+    {
       title: "DhanSetu Gateway",
       description:
         "A comprehensive crypto payment system with Next.js 15 and multi-blockchain support. Enables secure crypto payments, subscriptions, and invoicing across 6 blockchains including Ethereum, Polygon, BSC, Arbitrum, Optimism, and Solana.",

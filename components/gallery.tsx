@@ -13,6 +13,21 @@ export default function Gallery() {
 
   const images = [
     {
+      src: "/2025 winning photos/Devcraft_Hackathon.png",
+      alt: "DevCraft Hackathon Team",
+      caption: "1st Position at DevCraft Hackathon (IIT Indore) with Xplora project",
+    },
+    {
+      src: "/2025 winning photos/Devcraftphoto.png",
+      alt: "DevCraft Award Ceremony",
+      caption: "DevCraft Hackathon Award Ceremony - Team Imaginary Coders",
+    },
+    {
+      src: "/2025 winning photos/SS_prototype.png",
+      alt: "Xplora Project Screenshot",
+      caption: "Xplora - Adventure Reward Gaming Platform (DevCraft Winning Project)",
+    },
+    {
       src: "/iloveindoreWinning_photo.png",
       alt: "Hackathon Team",
       caption: "Winning the I Love Hackathon with Stock Saarthi project",

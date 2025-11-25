@@ -7,6 +7,12 @@ import { AwardIcon, TrophyIcon, CodeIcon, GraduationCapIcon, UsersIcon, ZapIcon 
 export default function Achievements() {
   const achievements = [
     {
+      title: "1st Position, DevCraft Hackathon (IIT Indore)",
+      description: "Built Xplora - An adventure-based reward gaming platform",
+      icon: <TrophyIcon className="h-10 w-10 text-yellow-500" />,
+      link: "https://github.com/AnuragTiwari1508/Xplora",
+    },
+    {
       title: "Winner, I Love Hackathon",
       description: "Built a Web3-based stock advisory platform called Stock Saarthi",
       icon: <TrophyIcon className="h-10 w-10 text-yellow-500" />,
@@ -79,7 +85,7 @@ export default function Achievements() {
           </h2>
           <div className="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
           <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-            Recognition and awards received for technical excellence, leadership, and innovation.
+            Recognition and awards received for technical excellence, leadership, and innovation. <strong>2X Hackathon Winner</strong>.
           </p>
         </motion.div>
 
