@@ -42,12 +42,14 @@ export default function Experience() {
     },
     {
       title: "GDGOC IET DAVV",
-      role: "Core Tech Team Member | Social Media & Content Lead",
+      role: "Head of Technology - App Development (Flutter) | Social Media & Content Lead",
       period: "2024 – Present",
       description: [
+        "Leading the App Development team specializing in Flutter technology and mobile application development.",
         "Ranked 3rd in Code Series – Showcased coding and problem-solving proficiency.",
         "Built multiple Flutter and API-based projects including a Geolocation-based Attendance Tracking System.",
         "Led content strategy and social media initiatives to enhance community engagement.",
+        "Mentoring team members in Flutter development and mobile app architecture best practices.",
       ],
     },
     {
