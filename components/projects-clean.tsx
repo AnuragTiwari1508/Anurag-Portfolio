@@ -128,77 +128,44 @@ export default function Projects() {
     <section id="projects" className="py-20 bg-white dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, type: "spring", stiffness: 80 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <motion.h2 
-            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-          >
-            My <span className="gradient-text-animate">Projects</span>
-          </motion.h2>
-          
-          <motion.div 
-            className="w-24 h-1.5 bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 mx-auto mb-8 rounded-full"
-            initial={{ width: 0 }}
-            whileInView={{ width: "6rem" }}
-            transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-          />
-          
-          <motion.p 
-            className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-          >
-            A collection of <span className="text-purple-600 dark:text-purple-400 font-semibold">innovative projects</span> showcasing expertise in web development, mobile apps, blockchain, electronics, and AI/ML technologies.
-          </motion.p>
-        </motion.div>
-
-        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="mb-12"
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
         >
-          <Tabs defaultValue="all" className="mb-8" onValueChange={setActiveTab}>
-            <TabsList className="grid grid-cols-3 md:grid-cols-6 w-full max-w-4xl mx-auto bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-purple-200 dark:border-purple-800 rounded-2xl p-2">
-              <TabsTrigger 
-                value="all" 
-                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-pink-600 data-[state=active]:text-white font-semibold rounded-xl transition-all duration-300"
-              >
-                All
-              </TabsTrigger>
-              <TabsTrigger 
-                value="hackathon" 
-                className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-purple-600 data-[state=active]:to-pink-600 data-[state=active]:text-white font-semibold rounded-xl transition-all duration-300"
-              >
-                🏆 Hackathons
-              </TabsTrigger>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+            My <span className="text-purple-600">Projects</span>
+          </h2>
+          <div className="w-20 h-1 bg-purple-600 mx-auto mb-6"></div>
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            A collection of projects showcasing my skills in web development, mobile apps, blockchain, electronics, and
+            AI/ML.
+          </p>
+        </motion.div>
+
+        <Tabs defaultValue="all" className="mb-8" onValueChange={setActiveTab}>
+          <TabsList className="grid grid-cols-3 md:grid-cols-6 w-full max-w-2xl mx-auto">
+            <TabsTrigger value="all">All</TabsTrigger>
+            <TabsTrigger value="hackathon">Hackathons</TabsTrigger>
+            <TabsTrigger value="web">Web</TabsTrigger>
+            <TabsTrigger value="app">Mobile</TabsTrigger>
             <TabsTrigger value="research">Research</TabsTrigger>
             <TabsTrigger value="electronics">Electronics</TabsTrigger>
-            <TabsTrigger value="web">Web</TabsTrigger>
-            <TabsTrigger value="app">Apps</TabsTrigger>
           </TabsList>
         </Tabs>
 
         <motion.div
-          key={activeTab} /* Add key prop to force re-render when tab changes */
           variants={container}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false }} /* Change to false to allow re-animation */
+          viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {filteredProjects.map((project, index) => (
-            <motion.div key={index} variants={item}>
-              <Card className="h-full overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="h-48 overflow-hidden">
+            <motion.div key={`${project.title}-${index}`} variants={item}>
+              <Card className="h-full hover:shadow-lg transition-shadow overflow-hidden">
+                <div className="relative h-48 bg-gray-200 dark:bg-gray-700">
                   <img
                     src={project.image || "/placeholder.svg"}
                     alt={project.title}
